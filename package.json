@@ -4,9 +4,11 @@
   "description": "JavaScript development environment by Anai Araya",
   "scripts": {
     "prestart": "node buildScripts/startMessage.js",
-    "start": "node buildScripts/srcServer.js",
+    "start": "npm-run-all --parallel security-check open:src",
+    "open:src": "node buildScripts/srcServer.js",
     "security-check": "nsp check",
-    "share": "lt --port 3000 --subdomain loveit"
+    "localtunnel": "lt --port 3000 --subdomain loveit",
+    "share": "npm-run-all --parallel open:src localtunnel"
   },
   "author": "Anai Araya",
   "license": "MIT",
