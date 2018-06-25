@@ -11,7 +11,8 @@ export const schema = {
           "id": {
             "type": "number",
             "unique": true,
-            "minimum": 1
+            "minimum": 1,
+            "maxLength": 5
           },
           "firstName": {
             "type": "string",
@@ -23,6 +24,7 @@ export const schema = {
           },
           "email": {
             "type": "string",
+            "format": "email",
             "faker": "internet.email"
           }
         },
@@ -31,4 +33,4 @@ export const schema = {
     }
   },
   "required": ["users"]
-};
+}
