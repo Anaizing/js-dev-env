@@ -2,7 +2,7 @@ import webpack from 'webpack'
 import path from 'path'
 
 export default {
-  mode: 'development',
+  mode: 'production',
   devtool: 'source-map',
   entry: [
     path.resolve(__dirname, 'src/index')
@@ -19,11 +19,6 @@ export default {
       noInfo: false,
     }),
 
-    // * Eliminate duplicate packages when generating bundle
-    new webpack.optimize.DedupePlugin(),
-
-    // * Minify JS
-    new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
     rules: [
