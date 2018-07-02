@@ -2,6 +2,9 @@ import webpack from 'webpack'
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import WebpackMd5Hash from 'webpack-md5-hash'
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 
 export default {
   mode: 'production',
@@ -11,7 +14,8 @@ export default {
   devtool: 'source-map',
   entry: {
     vendor: path.resolve(__dirname, 'src/vendor'),
-    main: path.resolve(__dirname, 'src/index')
+    main: path.resolve(__dirname, 'src/index'),
+    styles: path.resolve(__dirname, 'src/index.css')
   },
   target: 'web',
   output: {
@@ -28,9 +32,22 @@ export default {
           chunks: 'all'
         }
       }
-    }
+    },
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true // set to true if you want JS source maps
+      }),
+      new OptimizeCssAssetsPlugin({})
+    ]
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
+
     // * Hash the files using MD5 so that their names change when the content changes.
     new WebpackMd5Hash(),
 
@@ -54,15 +71,18 @@ export default {
 
     new webpack.LoaderOptionsPlugin({
       minimize: true,
-      debug: true,
+      debug: false,
       noInfo: false,
     }),
 
   ],
   module: {
-    rules: [
-      { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader'] },
-      { test: /\.css$/, loaders: ['style-loader', 'css-loader'] }
-    ]
+     rules: [
+     {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+     {test: /\.css$/, use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]}
+     ]
   }
 }
