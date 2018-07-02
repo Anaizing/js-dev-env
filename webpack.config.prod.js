@@ -1,6 +1,7 @@
 import webpack from 'webpack'
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import WebpackMd5Hash from 'webpack-md5-hash'
 
 export default {
   mode: 'production',
@@ -30,6 +31,8 @@ export default {
     }
   },
   plugins: [
+    // * Hash the files using MD5 so that their names change when the content changes.
+    new WebpackMd5Hash(),
 
     // * Create HTML file that includes reference to bundled JS
     new HtmlWebpackPlugin({
