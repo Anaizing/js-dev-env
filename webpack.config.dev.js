@@ -4,6 +4,9 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 export default {
   mode: 'development',
+  resolve: {
+    extensions: ['*', '.js', '.jsx', '.json']
+  },
   devtool: 'inline-source-map',
   entry: [
     path.resolve(__dirname, 'src/index')
@@ -22,6 +25,7 @@ export default {
     }),
 
     new webpack.LoaderOptionsPlugin({
+      minimize: false,
       debug: true,
       noInfo: false,
     })
