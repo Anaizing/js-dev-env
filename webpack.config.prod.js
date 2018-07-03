@@ -66,7 +66,10 @@ export default {
         minifyCSS: true,
         minifyURLs: true
       },
-      inject: true
+      inject: true,
+      // Properties you define here are available in index.html
+      // using htmlWebpackPlugin.options.varName
+      trackJSToken: 'ed8c0c6c26c34230880e445257f80271'
     }),
 
     new webpack.LoaderOptionsPlugin({
