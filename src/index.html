@@ -12,13 +12,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<% if (htmlWebpackPlugin.option.trackJSToken) { %>
-
+  <% if (htmlWebpackPlugin.options.trackJSToken) { %>
   <!-- BEGIN TRACKJS -->
-  <script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.option.trackJSToken%>' };</script>
+  <script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.options.trackJSToken%>' };</script>
   <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
   <!-- END TRACKJS -->
-
   <%  }  %>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
