@@ -49,3 +49,5 @@ Here is the frontend UI [DEMO APP](http://abounding-lip.surge.sh/) hosted on sur
 
 # STAR IT, FORK IT, TAKE IT APART, MAKE IT YOUR OWN -- ENJOY!
 
+Or if you want to follow the steps I followed and build one of your own from scratch, read my blog post [Soggy Ink- setting-up-a-javascript-dev-environment-day-30 ](https://soggy-ink.surge.sh/setting-up-a-javascript-dev-environment-day-30)
+
