@@ -3,7 +3,7 @@ Javascript Development Environment
 
 ![neon sign- do something great](https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2d8091fa5f63ab00decd568cd0c484f8&auto=format&fit=crop&w=1522&q=80)
 
-A Javascript starter kit I built from scratch, using the ES6 modular architecture pattern, encompassing all the necessary steps to build an app from the development stage to production and deployment. Includes these important steps ...with chosen corresponding technologies.
+A Javascript starter kit I built from scratch, encompassing all the necessary steps to build an app from the development stage to production and deployment. Includes these important steps ...with chosen corresponding technologies.
 
 * Package Mananagement
 * Bundling
@@ -43,4 +43,9 @@ A Javascript starter kit I built from scratch, using the ES6 modular architectur
 * Node Security Platform
 * Express
 * Local Tunnel
+
+Here is the frontend UI [DEMO APP](http://abounding-lip.surge.sh/) hosted on surge.sh
+...and here is the API [DEMO APP](https://calm-beach-81430.herokuapp.com/users) hosted on heroku
+
+# STAR IT, FORK IT, TAKE IT APART, MAKE IT YOUR OWN -- ENJOY!
 
