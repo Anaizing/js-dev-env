@@ -17,7 +17,7 @@ A Javascript starter kit I built from scratch, encompassing all the necessary st
 * Development Web Server
 * Linting
 * Automated Testing
-* Continuous Intergration
+* Continuous Integration
 * Automated Build
 * Automated Deployment, separating API and IU
 * Working Example app
